@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply max-w-[90rem] p-5 w-full mx-auto
+}
+
+@layer components {
+    .header {
+        @apply bg-light shadow-md relative;
+    }
+
+    .branding {
+        @apply md:flex items-center gap-12;
+    }
+
+    .branding img {
+        @apply w-[3.5rem];
+    }
+
+    .branding .header_navd {
+        @apply hidden md:flex gap-10;
+    }
+
+    .branding .header_navd li a {
+        @apply font-bold text-sm text-dark hover:text-berde;
+    }
+
+    .header_action {
+        @apply bg-light absolute top-[6rem] right-0 w-0
+        h-[90vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+    }
+
+    .header_action.open {
+        @apply w-[80%] h-[90vh] px-10 pt-10 transition-all;
+    }
+
+    .header_action .header_navm {
+        @apply border-b-gray-300 border-b-[0.15rem] pb-7 flex flex-col gap-5 md:hidden;
+    }
+
+    .header_action .header_navm li:hover a{
+        @apply text-berde;  
+    }
+
+    .header_action .header_navm li a{
+        @apply font-medium text-xl text-dark;
+    }
+
+    .header_action .header_btn a{
+        @apply flex gap-[1rem] items-center hover:text-berde;
+    }
+
+    .header_action .header_btn {
+        @apply pt-5 flex flex-col gap-10
+        md:flex md:flex-row-reverse md:items-center;    
+    }
+    
+    .header_action .header_kamote {
+        @apply flex gap-5 mb-2;
+    }
+
+    .burger_menu {
+        @apply md:hidden;
+    }
+
+    .burger_menu span {
+        @apply w-[1.5rem] h-[.2rem] bg-gray-600 block rounded-full transition-all;
+    }
+    
+    .burger_menu span:nth-child(2) {
+        @apply my-1;
+    }
+
+    .header_wrapper {
+        @apply flex items-center justify-between;
+    }
+    .burger_menu.open span:first-child {
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all;
+    }
+    .burger_menu.open span:nth-child(2) {
+        @apply opacity-0 transition-all;
+    }
+    .burger_menu.open span:last-child {
+        @apply transform translate-y-[-5px] rotate-[-225deg] transition-all;
+    }
+
+
+    .banner {
+        @apply py-6;
+    }
+
+    .banner_wrapper {
+        @apply flex flex-col gap-8 w-full
+        md:max-w-[90rem] md:w-full md:mx-auto;
+    }
+
+    .banner_card {
+        @apply grid grid-cols-1
+        md:grid-cols-2;
+    }
+
+    .banner_card:nth-child(even) img {
+        @apply md:order-1;
+    }
+
+    .banner_card img {
+        @apply w-full h-full object-cover;
+    }
+
+    .banner_card .card_content {
+        @apply flex flex-col justify-center items-center gap-8;
+    }
+
+    .links {
+        @apply p-6 border-t-2;
+    }
+
+    .links_wrapper {
+        @apply grid grid-cols-1 gap-10 md:grid md:grid-cols-6;
+    }
+
+    .links_item i {
+        @apply md:invisible;
+    }
+
+    .links_item ul {
+        @apply max-h-[0rem] overflow-hidden md:max-h-[50rem] md:pt-6 md:flex md:flex-col md:gap-4;
+    }
+
+    .links_item ul.open {
+        @apply max-h-[50rem] pt-6 transition-all flex flex-col gap-6;
+    }
+
+    .links_item ul li a {
+        @apply text-gray-500 font-medium md:hover:text-black;
+    }
+
+    .links_item h4 {
+        @apply flex items-center justify-between font-semibold transition-all hover:cursor-pointer md:text-lg md:font-medium;
+    }
+
+    .links_item h4 i.open {
+        @apply transform rotate-180 transition-all;
+    }
+
+    .footer {
+        @apply p-6 border-t-2;
+    }
+    
+    .footer_icons {
+        @apply flex gap-3 text-base text-white mb-8
+    }
+
+    .footer_icons a {
+        @apply bg-black rounded-full px-[0.7rem] py-[0.5rem]
+    }
+    
+    .footer_info {
+        @apply flex flex-col gap-4 font-medium mb-5 md:flex-row md:gap-8;
+    }
+
+    .footer_info li a {
+        @apply hover:underline md:border-gray-500 md:border-r-[0.13rem] md:pr-6 ;
+    }
+
+    .footer_info li:last-of-type a{
+        @apply md:border-none;
+    }
+
+    /* REWARDS PAGE */
+
+    .sub_wrapper {
+        @apply text-white flex justify-between items-center max-w-[90rem] mx-auto py-3 px-4 gap-3
+    }
+
+    .rBanner {
+        @apply bg-bituinBanner min-h-[600px] bg-cover bg-lberde bg-right-bottom 
+        md:bg-starBanner md:bg-left flex text-center md:text-left md:items-center;
+    }
+
+    .rBanner_btn {
+        @apply flex flex-col items-center justify-center md:items-start gap-2
+    } 
+
+
+    /* COFEE TAB */
+
+    .coffee_nav {
+        @apply bg-vlberde pt-10
+    }
+
+    .coffee_nav h4 {
+        @apply text-2xl font-bold md:text-3xl md:mb-[3rem]
+        text-center;
+    }
+
+    .coffee_nav ul {
+        @apply flex items-center justify-center mt-6
+    }
+
+    .coffee_nav ul li {
+        @apply px-5 pb-3 border-b-4 border-transparent
+    }
+
+    .coffee_nav ul li.active {
+        @apply border-b-4 border-berde
+    }
+
+    .coffee_nav ul li a {
+        @apply text-2xl font-semibold
+    }
+
+    .coffee_tab {
+        @apply bg-lberde relative h-[580px] md:h-[260px];
+    }
+
+    .coffee_item {
+        @apply absolute opacity-0 transition-all top-8 
+        md:grid md:grid-cols-[_2fr,_2fr] md:items-center md:max-w-[40rem] md:left-[33%];
+    }
+
+    .coffee_item.active {
+        @apply opacity-100 transition-all
+    }
+    
+    .coffee_text h5 {
+        @apply text-xl font-semibold text-center
+    }
+    .coffee_text p {
+        @apply text-center
+    }
+
+    .coffee_text {
+        @apply flex flex-col gap-4 mt-4;
+    }
+
+    /* START TAB */
+
+    
+    .start_wrapper {
+        @apply grid grid-cols-1 items-center md:grid-cols-3 md:mx-auto
+    }
+
+    .start_info {
+        @apply flex gap-3 mb-5 justify-center items-center md:flex-col md:text-center  
+    }
+
+    .start_info h3 {
+        @apply text-2xl font-medium text-berde border-berde rounded-full border-[2px] px-[0.8rem] py-[0.2rem]
+    }
+
+    .start_guide {
+        @apply flex flex-col gap-2 md:items-center
+    }
+
+    .start_guide h4 {
+        @apply font-medium text-lg mb-2
+    }
+
+    .start_guide p {
+        @apply md:max-w-[20rem]
+    }
+    
+}
+
+@layer utilities {
+    .btn {
+        @apply inline-block p-[1rem] rounded-full border-transparent border-[1px] 
+        text-sm font-medium hover:scale-[1.1] py-[0.5rem] px-[1rem];
+    }
+
+    .btnBanner {
+        @apply inline-block leading-none rounded-full border-dark border-[1px] text-base font-medium py-[.7rem] px-[1.4rem] hover:bg-gray-400;
+    }
+
+    .btnBanner_solid {
+        @apply inline-block leading-none rounded-full border-transparent text-base font-medium py-[.8rem] px-[1.2rem];
+    }
+
+    .btn.bg--dark{
+        @apply bg-dark text-light;
+    }
+    .btn.bg--light{
+        @apply bg-light text-dark border-dark border-[1px];
+    }
+
+    .btnRewards {
+        @apply inline-block leading-none rounded-full border-white border-[1px] text-base font-medium py-[.5rem] px-[0.9rem] hover:bg-gray-400;
+    }
+}
